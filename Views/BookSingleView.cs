@@ -1,5 +1,5 @@
 ﻿using System;
-
+using BookMan.ConsoleApp.Framework;
 namespace BookMan.ConsoleApp.Views // namespace  cách đặt 
 {
     using Models; // using bên trong namespace 
@@ -25,10 +25,10 @@ namespace BookMan.ConsoleApp.Views // namespace  cách đặt
         {
             if (Model == null)  // kiiểm tra xem object có dữ liệu không 
             {
-                WriteLine("NO BOOK FOUND. SORRY!", ConsoleColor.Red);
-                return; // Kết thức thực hiện phương thức 
+               ViewHelp.WriteLine("NO BOOK FOUND. SORRY!", ConsoleColor.Red);
+                return; // Kết thức thực hiện phương thức (bỏ qua phần còn lại )
             }
-            WriteLine("BOOK DETAIL INFORMATION", ConsoleColor.Green);
+           ViewHelp.WriteLine("BOOK DETAIL INFORMATION", ConsoleColor.Green);
             /*
              các dòng dưới đây viết ra thông tin cụ thể theo từng dòng 
             sử dụng cách tạo xâu kiểu "interpolation "
@@ -47,16 +47,6 @@ namespace BookMan.ConsoleApp.Views // namespace  cách đặt
             Console.WriteLine($"File:                       {Model.File}");
             Console.WriteLine($"File Name:              {Model.FileName}");
         }
-        /// <summary>
-        /// in thông báo ra màn hình console với chữ màu 
-        /// </summary>
-        /// <param name="message">thông báo </param>
-        /// <param name="color">màu</param>
-        protected void WriteLine(string message, ConsoleColor color)
-        {
-            Console.ForegroundColor= color;
-            Console.WriteLine(message);
-            Console.ResetColor();
-        }
+      
     }
 }

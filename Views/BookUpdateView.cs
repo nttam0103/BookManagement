@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookMan.ConsoleApp.Views
 {
+    using BookMan.ConsoleApp.Framework;
     using Models;
     internal class BookUpdateView
     {
@@ -16,20 +17,14 @@ namespace BookMan.ConsoleApp.Views
         }
         public void Render()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("UPDATE BOOK INFORMATION");
-            Console.ResetColor();
-
+            ViewHelp.WriteLine("UPDATE BOOK INFORMATION", ConsoleColor.Green);
+            ConsoleColor labelColor = ConsoleColor.Magenta, valueColor = ConsoleColor.White;
             //hiển thị giá trị cũ 
-            Console.ForegroundColor= ConsoleColor.Magenta;
-            Console.Write("Authors: ");
-            Console.ForegroundColor=ConsoleColor.White;
-            Console.WriteLine(Model.Authors);
+            ViewHelp.Write("Authors: ", labelColor);
+            ViewHelp.WriteLine(Model.Authors, valueColor);
 
             //yêu cầu nhập giá trị mới 
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write("New value: ");
-            Console.ResetColor();
+            ViewHelp.Write("New value: ",labelColor);
 
             // đọc giá trị mới 
             var str = Console.ReadLine();
@@ -43,21 +38,7 @@ namespace BookMan.ConsoleApp.Views
          
         }
 
-        private void WriteLine(string message, ConsoleColor color = ConsoleColor.White, bool resetColor = true)
-        {
-            Console.ForegroundColor = color;
-            Console.WriteLine(message);
-            if (resetColor) Console.ResetColor();
-        }
-        private void Write(string message, ConsoleColor color = ConsoleColor.White, bool resetColor = true)
-        {
-            Console.ForegroundColor = color;
-            Console.Write(message);
-            if (resetColor) Console.ResetColor();
-            {
-                
-            }
-        }
+      
         
     }
 }
