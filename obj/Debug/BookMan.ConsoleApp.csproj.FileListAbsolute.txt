@@ -1,0 +1,7 @@
+D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\bin\Debug\BookMan.ConsoleApp.exe.config
+D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\bin\Debug\BookMan.ConsoleApp.exe
+D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\bin\Debug\BookMan.ConsoleApp.pdb
+D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.csproj.AssemblyReference.cache
+D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.csproj.CoreCompileInputs.cache
+D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.exe
+D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.pdb
