@@ -35,5 +35,10 @@
             BookCreateView view = new BookCreateView();
             view.Render();
         }
+        public void Update(int id) {
+            var model = new Book();
+            var view = new BookUpdateView(model);
+            view.Render();
+        }
     }
 }

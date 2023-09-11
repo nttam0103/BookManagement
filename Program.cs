@@ -24,7 +24,10 @@ namespace BookMan.ConsoleApp
                         break;
                     case "create":
                             controller.Create();
-                        break;                      
+                        break;
+                    case "update":
+                        controller.Update(1);
+                        break;
                      default:
                         Console.WriteLine("Unknow command ");
                         break;
