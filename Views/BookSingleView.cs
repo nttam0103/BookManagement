@@ -15,7 +15,7 @@ namespace BookMan.ConsoleApp.Views // namespace  cách đặt
         /// <param name="model">Cuốn sách cụ thể sẻ được hiển thị </param>
         public BookSingleView(Book model)
         {
-            Model = model;// chuyển dữ liệu từ tham số sang biến thành viên để sử dụng trong toàn class 
+          Model = model;// chuyển dữ liệu từ tham số sang biến thành viên để sử dụng trong toàn class 
 
         }
         /// <summary>

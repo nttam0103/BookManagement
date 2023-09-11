@@ -28,6 +28,12 @@
             BookSingleView view = new BookSingleView(model);
             // gọi chương trình Render để thực hiện thị ta màn hình 
             view.Render();
+
+        }
+        public void Create()
+        {
+            BookCreateView view = new BookCreateView();
+            view.Render();
         }
     }
 }
