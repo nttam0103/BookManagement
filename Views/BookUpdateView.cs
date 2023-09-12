@@ -24,7 +24,12 @@ namespace BookMan.ConsoleApp.Views
             var isbn = ViewHelp.InputString("Isbn", Model.Isbn);
             var tags = ViewHelp.InputString("Tags", Model.Tags);
             var description = ViewHelp.InputString("Description", Model.Description);
-            var file = ViewHelp.InputString("File", Model.File);         
+            var file = ViewHelp.InputString("File", Model.File);
+            var year = ViewHelp.InputInt("Year", Model.Year);
+            var edition = ViewHelp.InputInt("Edition", Model.Edittion);
+            var rating = ViewHelp.InputInt("Rate", Model.Rating);
+            var reading = ViewHelp.InputBool("Reading", Model.Reading);
+
         }
 
       

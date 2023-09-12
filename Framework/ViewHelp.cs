@@ -49,6 +49,18 @@ namespace BookMan.ConsoleApp.Framework
             bool @char = key.KeyChar == 'y' || key.KeyChar == 'Y' ? true : false;// chuyển sang kiểu bôl dùng biểu thức điều kiện 
             return @char; // lưu ý cách viét tên biến @char 
         }
+        public static bool InputBool(string label,bool oldValue, ConsoleColor labelColor = ConsoleColor.Magenta, ConsoleColor valueColor = ConsoleColor.White)
+        {
+            Write($"{label}: ", labelColor);
+            // sử dụng phướng thức mở rọng ToString 
+            WriteLine(oldValue.ToString("y/n"), ConsoleColor.Yellow);
+            Write("New value >> ", ConsoleColor.Green);
+            Console.ForegroundColor = valueColor;
+            string str = Console.ReadLine();
+            if (string.IsNullOrEmpty(str)) return oldValue;
+            return str.ToBool() ; //sử dụng thương thức mở rộng 
+
+        }
         /// <summary>
         /// in ra thông báo và tiếp nhận chuổi ký tự người dùng nhập rồi chuyển sang số nguyên 
         /// </summary>
@@ -68,6 +80,17 @@ namespace BookMan.ConsoleApp.Framework
                 }
 ;
             }
+        }
+        public static int InputInt(string label, int olaValue, ConsoleColor labelColor = ConsoleColor.Magenta, ConsoleColor valueColor = ConsoleColor.White)
+        {
+            Write($"{label}: ",labelColor);
+            WriteLine($"{olaValue}", ConsoleColor.Yellow);
+            Write("New value >> ", ConsoleColor.Green);
+            Console.ForegroundColor = valueColor;
+            string str = Console.ReadLine();
+            if (string.IsNullOrEmpty(str)) return olaValue;
+            if (str.ToInt(out int i)) return 1; // sử dựng phương thức mở rộng 
+            return olaValue;
         }
         /// <summary>
         /// in ra thông báo và tiếp nhận chuổi ký tự người dùng nhập 
