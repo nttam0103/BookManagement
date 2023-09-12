@@ -18,24 +18,13 @@ namespace BookMan.ConsoleApp.Views
         public void Render()
         {
             ViewHelp.WriteLine("UPDATE BOOK INFORMATION", ConsoleColor.Green);
-            ConsoleColor labelColor = ConsoleColor.Magenta, valueColor = ConsoleColor.White;
-            //hiển thị giá trị cũ 
-            ViewHelp.Write("Authors: ", labelColor);
-            ViewHelp.WriteLine(Model.Authors, valueColor);
-
-            //yêu cầu nhập giá trị mới 
-            ViewHelp.Write("New value: ",labelColor);
-
-            // đọc giá trị mới 
-            var str = Console.ReadLine();
-            /*
-             nếu người dùng nhập enter luon (bỏ qua nhập dữ liệu) thì lấy lại giá trị cũ 
-            của trường authors gán cho biến cục bộ authors 
-            Nếu người dùng nhập giá trị mới thì biến cục bộ authors nhận giá trị này 
-            Giá trị của biến authors về sau sẻ chuyển về controller để xử lý 
-             */
-            var authors = string.IsNullOrEmpty(str.Trim()) ? Model.Authors: str;
-         
+            var authors = ViewHelp.InputString("Authors ", Model.Authors);
+            var title = ViewHelp.InputString("Title", Model.Title);
+            var publisher = ViewHelp.InputString("Publisher ", Model.Publisher);
+            var isbn = ViewHelp.InputString("Isbn", Model.Isbn);
+            var tags = ViewHelp.InputString("Tags", Model.Tags);
+            var description = ViewHelp.InputString("Description", Model.Description);
+            var file = ViewHelp.InputString("File", Model.File);         
         }
 
       

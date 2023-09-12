@@ -84,6 +84,22 @@ namespace BookMan.ConsoleApp.Framework
             Console.ResetColor();
             return value;
         }
-
+        /// <summary>
+        /// cập nhật giá trị kiểu string, nếu ấn enter mà không nhập dữ liệu sẻ trả lại giá trj củ 
+        /// </summary>
+        /// <param name="label">dòng thông báo </param>
+        /// <param name="oldValue">giá trị gốc </param>
+        /// <param name="labelColor">màu chữ thông báo </param>
+        /// <param name="valueColor">màu chữ dữ liệu </param>
+        /// <returns></returns>
+        public static string InputString(string label, string oldValue, ConsoleColor labelColor = ConsoleColor.Magenta, ConsoleColor valueColor = ConsoleColor.White)
+        {
+            Write($"{label}: ",labelColor);
+            WriteLine(oldValue, ConsoleColor.Yellow);
+            Write("New value >> ", ConsoleColor.Green);
+            Console.ForegroundColor= valueColor;
+            string newValue = Console.ReadLine();
+            return string.IsNullOrEmpty(newValue.Trim()) ? oldValue : newValue;
+        }
     }
 }
