@@ -124,5 +124,8 @@ namespace BookMan.ConsoleApp.Framework
             string newValue = Console.ReadLine();
             return string.IsNullOrEmpty(newValue.Trim()) ? oldValue : newValue;
         }
+
+      
     }
 }
+    

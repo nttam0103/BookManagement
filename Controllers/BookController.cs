@@ -40,5 +40,28 @@
             var view = new BookUpdateView(model);
             view.Render();
         }
+        /// <summary>
+        /// Kích hoạt chức năng hiển thị danh sách 
+        /// </summary>
+        public void List()
+        {
+           /*
+            Khai báo và khởi tạo một mảng, mỗi phần tử thuộc kiểu Bok 
+           lệnh dưới đây khai báo và khởi tạo 1 mảng gồm 6 phần tử 
+           mỗi phân tử thuộc kiểu book
+           Do book là class, mỗi phần tử của mảng của phải được khai khởi tạo
+           sử dụng từ khóa new tuong tự khởi tạo mọt object bình thừng
+            */
+            Book[] model = new Book[] { 
+            new Book{Id=1, Title = "A new book 1"},
+            new Book{Id=2, Title = "A new book 2"},
+            new Book{Id=3,Title = "A new book 3"},
+            new Book{Id=4, Title = "A new book 4"},
+            new Book{Id=5, Title = "A new book 5"},
+            new Book{Id=6,Title = "A new book 6"}
+            };
+            BookListView view = new BookListView(model);
+            view.Render();
+        }
     }
 }
