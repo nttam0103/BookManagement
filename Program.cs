@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace BookMan.ConsoleApp
 {
+    using BookMan.ConsoleApp.DataServices;
     using Controllers;
     internal class Program
     {
 
         static void Main(string[] args)
         {
-            BookController controller = new BookController();
+            SimpleDataAccess context = new SimpleDataAccess();
+            BookController controller = new BookController(context);
             while (true)
             {
                 Console.Write("Request> ");

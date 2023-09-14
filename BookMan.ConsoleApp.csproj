@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BookController.cs" />
+    <None Include="FileName.cs" />
+    <Compile Include="DataServices\Repository.cs" />
+    <Compile Include="DataServices\SimpleDataAccess.cs" />
     <Compile Include="Framework\Extension.cs" />
     <Compile Include="Framework\ViewHelp.cs" />
     <Compile Include="Models\Book.cs" />

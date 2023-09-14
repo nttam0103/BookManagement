@@ -3,7 +3,7 @@
     /// <summary>
     /// Lớp mô tả sách điện tử 
     /// </summary>
-    internal class Book
+    public class Book
     {
         private int _id = 1;
         /// <summary>
