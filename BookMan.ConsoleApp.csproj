@@ -44,13 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BookController.cs" />
-    <None Include="FileName.cs" />
+    <Compile Include="FileName.cs" />
     <Compile Include="DataServices\Repository.cs" />
     <Compile Include="DataServices\SimpleDataAccess.cs" />
     <Compile Include="Framework\Extension.cs" />
+    <Compile Include="Framework\Parameter.cs" />
     <Compile Include="Framework\ViewHelp.cs" />
     <Compile Include="Models\Book.cs" />
-    <Compile Include="Program.cs" />
+    <None Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\BookCreateView.cs" />
     <Compile Include="Views\BookListView.cs" />
