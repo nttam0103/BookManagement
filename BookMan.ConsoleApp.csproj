@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BookMan.ConsoleApp.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,14 +47,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BookController.cs" />
-    <Compile Include="FileName.cs" />
+    <None Include="FileName.cs" />
     <Compile Include="DataServices\Repository.cs" />
     <Compile Include="DataServices\SimpleDataAccess.cs" />
     <Compile Include="Framework\Extension.cs" />
     <Compile Include="Framework\Parameter.cs" />
+    <Compile Include="Framework\Router.cs" />
     <Compile Include="Framework\ViewHelp.cs" />
     <Compile Include="Models\Book.cs" />
-    <None Include="Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\BookCreateView.cs" />
     <Compile Include="Views\BookListView.cs" />

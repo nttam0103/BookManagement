@@ -7,38 +7,44 @@ using System.Threading.Tasks;
 namespace BookMan.ConsoleApp
 {
     using BookMan.ConsoleApp.DataServices;
+    using BookMan.ConsoleApp.Framework;
     using Controllers;
     internal class Program
     {
-
-        static void Main(string[] args)
+      private  static void Main(string[] args)
         {
-            SimpleDataAccess context = new SimpleDataAccess();
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            var context = new SimpleDataAccess();
             BookController controller = new BookController(context);
+
+            Router.Instance.Resgister("about", About);
+            Router.Instance.Resgister("help", Help);
             while (true)
             {
-                Console.Write("Request> ");
+                ViewHelp.Write("Request> ",ConsoleColor.Green);
                 string request = Console.ReadLine();
-                switch (request.ToLower())
-                {
-                    case "single":
-                        controller.Single(1);
-                        break;
-                    case "create":
-                            controller.Create();
-                        break;
-                    case "update":
-                        controller.Update(1);
-                        break;
-                    case "list":
-                        controller.List();
-                        break;
-                     default:
-                        Console.WriteLine("Unknow command ");
-                        break;
-                }
+                Router.Instance.Forward(request);
+                Console.ReadLine();
             }
-            Console.ReadKey();
+        }
+        private static void About(Parameter parameter)
+        {
+            ViewHelp.WriteLine("BOOK MANAGER version 1.0", ConsoleColor.Green);
+            ViewHelp.WriteLine("by trongtam", ConsoleColor.Magenta);
+
+        }
+        private static void Help(Parameter parameter)
+        {
+            if(parameter == null)
+            {
+                ViewHelp.WriteLine("SUPPORTED COMMANDS:", ConsoleColor.Green);
+                ViewHelp.WriteLine(Router.Instance.GetRouter(), ConsoleColor.Yellow);
+                ViewHelp.WriteLine("type: help ? cmd = <command> to get command details", ConsoleColor.Cyan);
+                return;
+            }
+            Console.BackgroundColor = ConsoleColor.DarkRed;
+            var command = parameter["cmd"].ToLower();
+            ViewHelp.WriteLine(Router.Instance.GetHelp(command));
         }
     }
 }

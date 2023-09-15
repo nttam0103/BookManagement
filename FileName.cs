@@ -10,7 +10,6 @@ namespace BookMan.ConsoleApp
 {
     internal class FileName
     {
-  
         /// <summary>
         /// lớp biểu diễn hình hộp
         /// </summary>
