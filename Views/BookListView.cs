@@ -11,35 +11,28 @@ namespace BookMan.ConsoleApp.Views
     /// <summary>
     /// class để hiển thị danh sach Book 
     /// </summary>
-    internal class BookListView
+    internal class BookListView:  ViewBase
     {
+        public BookListView(Book[] model) : base(model) { }
         protected Book[] Model; // mảng của các object kiểu Book 
-        /// <summary>
-        /// hàm tạo 
-        /// </summary>
-        /// <param name="model">danh sách object kiểu book </param>
-        public BookListView(Book[] model)
-        {
-            Model = model;
-        }
+      
         /// <summary>
         /// in danh sách ra console 
         /// </summary>
         public void Render()
         {
-            if (Model.Length == 0)
-            {
+            if (((Book[]) Model).Length == 0){
                 ViewHelp.WriteLine("No book found!", ConsoleColor.Yellow);
                 return;
             }
-            ViewHelp.WriteLine("THE BOOK LIST", ConsoleColor.Green);
-            int i = 0;
-            while (i < Model.Length)
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("THE BOOKJ LIST");
+            Console.ForegroundColor= ConsoleColor.Yellow;
+            foreach(Book b in Model as Book[])
             {
-                ViewHelp.Write($"[{Model[i].Id}]", ConsoleColor.Yellow);
-                ViewHelp.WriteLine($"[{Model[i].Title}]", Model[i].Reading ? ConsoleColor.Cyan : ConsoleColor.White);
-                i++;
+                ViewHelp.Write($"[{b.Id}]",b.Reading ? ConsoleColor.DarkCyan);
             }
+            Console.ResetColor();
         }
         public void RenderToFile(string path)
         {
