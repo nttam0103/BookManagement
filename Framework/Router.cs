@@ -64,7 +64,7 @@ namespace BookMan.ConsoleApp.Framework
         /// <param name="route"></param>
         /// <param name="action"></param>
         /// <param name="help"></param>
-        public void Resgister(string route, ControllerAction action, string help = "")
+        public void Resgister(string route, ControllerAction action, string help =" ")
         {
             // nếu _routingTable đã chứa route này thì bỏ qua 
             if (!_routingTable.ContainsKey(route))

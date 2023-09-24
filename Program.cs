@@ -22,21 +22,28 @@ namespace BookMan.ConsoleApp
             r.Resgister("help", Help);
             r.Resgister(route: "create",
                 action: p => controller.Create(),
-                help: "[create]\r\nnhập sách mới");
+                help: "[create]\r\n nhập sách mới");
             r.Resgister(route: "update",
                 action: p => controller.Update(p["id"].ToInt()),
-                help: "[update ? id = <value>]\r\ntìm và cập nhật sách");
-            r.Resgister(route: "list",
+                help: "[update ? id = <value>]\r\n tìm và cập nhật sách");
+            r.Resgister(route:"list",
                 action: p => controller.List(),
                 help: "[list]\r\nhiển thị tất cả sách");
-            r.Resgister(route: "single",
+            r.Resgister(route:"single",
                 action: p => controller.Single(p["id"].ToInt()),
-                help: "[single ? id = < value >]\r\nhiển thị một cuốn sách theo id");
+                help: "[single ? id =<value>]\r\n hiển thị một cuốn sách theo id");
+            r.Resgister(route: "list file",
+                action: p => controller.List(p["path"]),
+                help: "[list file ? path = <value>]\r\n hiển thị tất cả sách");
+            r.Resgister(route: "single file",
+                action: p => controller.Single(p["id"].ToInt(), p["path"]),
+                help: "[single file ? id = <value> & path = <value>]");
             while (true)
             {
                 ViewHelp.Write("# Request >>> ", ConsoleColor.Green);
                 string request = Console.ReadLine();
                 Router.Instance.Forward(request);
+
                 Console.WriteLine();
             }
         }

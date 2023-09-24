@@ -15,7 +15,7 @@ namespace BookMan.ConsoleApp.Framework
         /// <returns></returns>
         public static int ToInt(this string value) 
         {
-            return int.Parse(value);
+            return Convert.ToInt32(value);
         }
         /// <summary>
         /// Biến đổi chuổi sang số nguyên 

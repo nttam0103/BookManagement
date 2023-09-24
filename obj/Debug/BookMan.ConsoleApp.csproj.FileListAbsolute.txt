@@ -5,3 +5,6 @@ D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.c
 D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.csproj.CoreCompileInputs.cache
 D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.exe
 D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.pdb
+D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\bin\Debug\Newtonsoft.Json.dll
+D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\bin\Debug\Newtonsoft.Json.xml
+D:\DOTNET\Visual studio\EX_ICT\BookMan.ConsoleApp\obj\Debug\BookMan.ConsoleApp.csproj.CopyComplete

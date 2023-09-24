@@ -41,5 +41,12 @@ namespace BookMan.ConsoleApp.Views
                 i++;
             }
         }
-    }
+        public void RenderToFile(string path)
+        {
+            ViewHelp.WriteLine($"Saving date to file '{path}'");
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(Model);
+            System.IO.File.WriteAllText(path, json);
+            ViewHelp.WriteLine("Done!");
+        }
+    } 
 }
