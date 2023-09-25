@@ -1,14 +1,15 @@
 ﻿namespace BookMan.ConsoleApp.Controllers
 {
     using BookMan.ConsoleApp.DataServices;
+    using BookMan.ConsoleApp.Framework;
     using Models;
     using Views;
     /// <summary>
     /// lớp điều khiểu, giúp nói dữ liệu sách với giao diện 
     /// </summary>
-    internal class BookController
+    internal class BookController : ControllerBase
     {
-        public Repository Repository;
+        protected Repository Repository;
         public BookController (SimpleDataAccess context)
         {
             Repository = new Repository (context);
@@ -19,22 +20,16 @@
         /// <param name="id">mã định danh của cuốn sách </param>
         public void Single(int id, string path ="") {
             var model = Repository.Select(id);
-            // Khởi tạo view 
-            BookSingleView view = new BookSingleView(model);
-            // gọi chương trình Render để thực hiện thị ta màn hình 
-            if (!string.IsNullOrEmpty(path)) { view.RenderToFile(path); return; }
-            view.Render();
+            Render(new BookSingleView(model), path);
 
         }
         public void Create()
         {
-            BookCreateView view = new BookCreateView();
-            view.Render();
+           Render(new BookCreateView());
         }
         public void Update(int id) {
-            var model = new Book();
-            var view = new BookUpdateView(model);
-            view.Render();
+            var model = Repository.Select (id);
+            Render(new BookUpdateView(model));
         }
         /// <summary>
         /// Kích hoạt chức năng hiển thị danh sách 
@@ -43,11 +38,7 @@
         {
             // lấy dữ liệu qua repository 
             var model = Repository.Select();
-           // khởi tạo view 
-            BookListView view = new BookListView(model);
-            // gọi phương thức Render để phục vụ dự hiển thị ra màn hình 
-            if(!string.IsNullOrEmpty(path)) { view.RenderToFile(path); return; }
-            view.Render();
+            Render(new BookListView(model));
         }
 
     }

@@ -5,13 +5,13 @@ namespace BookMan.ConsoleApp.Views
     /// <summary>
     /// class để thêm môt cuốn sách mới 
     /// </summary>
-    internal class BookCreateView
+    internal class BookCreateView:ViewBase
     {
         public BookCreateView() { }
         /// <summary>
         /// yêu cầu người dùng  nhập từngt thông tin và lưu lại thông tin đó 
         /// </summary>
-        public void Render()
+        public override void Render()
         {
             ViewHelp.WriteLine("CREATE A NEW BOOK", ConsoleColor.Green);
             var title = ViewHelp.InputString("Title"); //đọc vào biến title            
