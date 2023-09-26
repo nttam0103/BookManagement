@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace BookMan.ConsoleApp.Framework
 {
-    public class ViewBase
+    public abstract class ViewBase
     {
 
         protected Router Router = Router.Instance;
         public ViewBase() { }
-        public virtual void Render() { }
+        public abstract void Render();
     }
 
-    public class ViewBase<T> : ViewBase {
+    public abstract class ViewBase<T> : ViewBase {
         public T Model;
         public ViewBase(T model)=>Model = model;
 
