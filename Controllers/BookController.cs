@@ -23,13 +23,26 @@
             Render(new BookSingleView(model), path);
 
         }
-        public void Create()
+        public void Create( Book book =null)
         {
-           Render(new BookCreateView());
+             if(book == null)
+            {
+                Render(new BookCreateView());
+                return;
+            }
+             Repository.Insert(book);
+            Success("Book created!");
         }
-        public void Update(int id) {
-            var model = Repository.Select (id);
-            Render(new BookUpdateView(model));
+        public void Update(int id, Book book = null ) {
+            if (book == null)
+            {
+                var model = Repository.Select(id);
+              var view =  new BookUpdateView(model);
+                Render(view);
+                return;
+            }
+            Repository.Update(id, book);
+            Success("Book updated !");
         }
         /// <summary>
         /// Kích hoạt chức năng hiển thị danh sách 

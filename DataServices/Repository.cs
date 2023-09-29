@@ -34,7 +34,7 @@ namespace BookMan.ConsoleApp.DataServices
             {
                 var logic =
                     b.Title.ToLower().Contains(k) ||
-                    b.Authors.ToLower().Contains(k) ||
+                    b.Author.ToLower().Contains(k) ||
                     b.Publisher.ToLower().Contains(k) ||
                     b.Tags.ToLower().Contains(k) ||
                     b.Description.ToLower().Contains(k);
@@ -60,7 +60,7 @@ namespace BookMan.ConsoleApp.DataServices
         {
             var b = Select(id);
             if(b ==null) return false;
-            b.Authors = book.Authors;
+            b.Author = book.Author;
             b.Description = book.Description;
             b.Edittion = book.Edittion;
             b.File = book.File;

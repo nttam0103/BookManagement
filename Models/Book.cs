@@ -19,7 +19,7 @@
         /// <summary>
         /// Tên tác giả hoặc nhóm tác giả, Không nhận xâu rỗng 
         /// </summary>
-        public string Authors
+        public string Author
         {
             get { return _authors; }
             set { if (!string.IsNullOrEmpty(value)) _authors = value; } // không nhận xâu rỗng 

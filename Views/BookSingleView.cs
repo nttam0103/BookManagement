@@ -22,7 +22,7 @@ namespace BookMan.ConsoleApp.Views // namespace  cách đặt
                 return; 
             }
            ViewHelp.WriteLine("BOOK DETAIL INFORMATION", ConsoleColor.Green);
-            Console.WriteLine($"Authors:            {Model.Authors}");
+            Console.WriteLine($"Authors:            {Model.Author}");
             Console.WriteLine($"Title:                  {Model.Title}");
             Console.WriteLine($"Publisher:          {Model.Publisher}");
             Console.WriteLine($"Year:                   {Model.Year}");

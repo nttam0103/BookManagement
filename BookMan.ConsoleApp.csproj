@@ -55,11 +55,13 @@
     <Compile Include="DataServices\SimpleDataAccess.cs" />
     <Compile Include="Framework\ControllerBase.cs" />
     <Compile Include="Framework\Extension.cs" />
+    <Compile Include="Framework\Message.cs" />
     <Compile Include="Framework\Parameter.cs" />
     <Compile Include="Framework\Router.cs" />
     <Compile Include="Framework\ViewBase.cs" />
     <Compile Include="Framework\ViewHelp.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Program.Config.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\BookCreateView.cs" />
